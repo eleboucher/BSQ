@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:51:10 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 14:10:52 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 14:15:34 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,15 @@ void	ft_print(char **grid, t_map *info, t_point max, int size)
 					&& cur.x <= max.x && cur.x > max.x - size)
 				write(1, &info->plein, 1);
 			else
-				write(1, &grid[cur.y][cur.x], 1);
+			{
+				if (cur.y > max.y || cur.y < max.y - size)
+				{
+					write(1, grid[cur.y], info->width);
+					cur.x = info->width;
+				}
+				else
+					write(1, &grid[cur.y][cur.x], 1);
+			}
 		}
 		write(1, "\n", 1);
 	}
