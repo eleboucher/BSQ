@@ -6,13 +6,14 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:51:10 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 14:06:14 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 14:10:52 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 #include <stdio.h>
 #define MOD(x) ((x) % 2)
+
 int		ft_min(int a, int b, int c)
 {
 	int	min;
@@ -57,9 +58,7 @@ void	ft_find_bsq(char **grid, t_map *map_info)
 			max_size = (max_size > memory[cur.y % 2][cur.x % 2]) ? max_size :
 				memory[cur.y % 2][cur.x % 2];
 			max = (max_size > memory[cur.y % 2][cur.x % 2]) ? max : cur;
-			printf("%d ", memory[cur.y % 2][cur.x % 2]);
 		}
-		printf("\n");
 	}
 	ft_print(grid, map_info, max, max_size);
 }
@@ -69,14 +68,13 @@ void	ft_print(char **grid, t_map *info, t_point max, int size)
 	t_point	cur;
 
 	cur.y = -1;
-	printf("%d %d %d\n\n", size, max.y, max.y);
 	while (++cur.y < info->height)
 	{
 		cur.x = -1;
 		while (++cur.x < info->width)
 		{
-			if (cur.y <= max.y && cur.y >= max.y - size
-					&& cur.x <= max.x && cur.x >= max.x - size)
+			if (cur.y <= max.y && cur.y > max.y - size
+					&& cur.x <= max.x && cur.x > max.x - size)
 				write(1, &info->plein, 1);
 			else
 				write(1, &grid[cur.y][cur.x], 1);
