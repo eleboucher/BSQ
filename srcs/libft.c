@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 10:10:56 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 11:32:12 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 12:00:23 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,18 @@ void	ft_destroy(char **to_free, int lines)
 	while (i < lines)
 		free(to_free[i++]);
 	free(to_free);
+}
+
+char	*ft_strdup(char *str, int len)
+{
+	char	*ret;
+	int		cur;
+
+	if (!(ret = malloc((len + 1) * sizeof(char))))
+		return (NULL);
+	cur = -1;
+	while (++cur < len)
+		ret[cur] = str[cur];
+	ret[cur] = 0;
+	return (ret);
 }
