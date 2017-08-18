@@ -6,12 +6,12 @@
 #    By: elebouch <elebouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/18 10:00:59 by elebouch          #+#    #+#              #
-#    Updated: 2017/08/18 13:25:29 by nweeks           ###   ########.fr        #
+#    Updated: 2017/08/18 14:41:30 by elebouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra -Werror -O3 
 EXEC = bsq
 
 SRCS = srcs/main.c 		\
