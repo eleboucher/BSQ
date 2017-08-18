@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 12:10:00 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 12:11:21 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	ft_start_bsq(char *file)
 		ft_putstr("map error\n", 2);
 		return ;
 	}
-	for(int i = 0; i < map->height; ++i)
-		printf("%s\n", grid[i]);
 	ft_destroy(grid, map->height);
 	free(map);
 	close(fd);
@@ -47,7 +45,5 @@ int		main(int argc, char **argv)
 
 	cur_file = 0;
 	while (++cur_file < argc)
-	{
 		ft_start_bsq(argv[cur_file]);
-	}
 }
