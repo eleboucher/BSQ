@@ -6,11 +6,12 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:55:26 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 12:02:20 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 13:32:19 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdio.h>
 #define BUFF_SIZE 500000
 #define ERR_MSG "A COMPLETER"
 

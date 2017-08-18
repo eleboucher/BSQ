@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:54:57 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 12:00:25 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 13:25:06 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-
 
 typedef struct	s_map
 {
@@ -43,4 +42,7 @@ void	ft_destroy(char **to_free, int lines);
 char	*ft_get_line(int fd, t_map *map_info);
 char	**ft_parse(int fd, t_map *map_info);
 char	*ft_strdup(char *str, int len);
+void	ft_memset(char **grid, int *line, t_map *map);
+void	ft_print(char **grid, t_map *info, t_point max, int size);
+void	ft_find_bsq(char **grid, t_map *map_info);
 #endif
