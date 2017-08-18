@@ -6,7 +6,7 @@
 #    By: elebouch <elebouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/18 10:00:59 by elebouch          #+#    #+#              #
-#    Updated: 2017/08/18 10:34:24 by nweeks           ###   ########.fr        #
+#    Updated: 2017/08/18 11:33:22 by nweeks           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,11 @@ INCLUDES = includes/
 all: $(EXEC)
 
 $(EXEC):
-	$(CC) $(FLAGS) $(SRCS) -I$(INCLUDES) -o $(EXEC)
+	$(CC) $(FLAGS) $(SRCS) -I $(INCLUDES) -o $(EXEC)
 
 clean:
 
 fclean: clean
 	rm -f $(EXEC)
+
+re: fclean all

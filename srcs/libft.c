@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 10:10:56 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 10:33:40 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 11:32:12 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,14 @@ void	ft_putstr(char *str, int fd)
 {
 	while (*str)
 		write(fd, str++, 1);
+}
+
+void	ft_destroy(char **to_free, int lines)
+{
+	int	i;
+
+	i = 0;
+	while (i < lines)
+		free(to_free[i++]);
+	free(to_free);
 }

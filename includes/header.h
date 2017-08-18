@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:54:57 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 10:33:58 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/18 11:34:34 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,16 @@ typedef struct	s_map
 	char		vide;
 	char		obstacle;
 	char		plein;
-	int			hauteur;
-	int			largeur;
+	int			height;
+	int			width;
 }				t_map;
 
 char	ft_read_int(int fd, int *number);
 void	ft_putstr(char *str, int fd);
 t_map	*get_first_line(int fd);
 int		ft_get_fd(char *file);
-
+int		ft_is_valid(t_map *map_info, char c);
+void	ft_destroy(char **to_free, int lines);
+char	*ft_get_line(int fd, t_map *map_info);
+char	**ft_parse(int fd, t_map *map_info);
 #endif
