@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:54:57 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 17:09:01 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 17:41:29 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# define BUFFSIZE 128
+# define BUFFSIZE 128000
+
 typedef struct	s_map
 {
 	int			valid_map;
