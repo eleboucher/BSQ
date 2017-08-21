@@ -6,7 +6,7 @@
 #    By: elebouch <elebouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/18 10:00:59 by elebouch          #+#    #+#              #
-#    Updated: 2017/08/18 14:41:30 by elebouch         ###   ########.fr        #
+#    Updated: 2017/08/21 14:40:15 by nweeks           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ EXEC = bsq
 SRCS = srcs/main.c 		\
 	   srcs/utility.c	\
 	   srcs/libft.c		\
-	   srcs/processing.c
+	   srcs/processing.c \
+	   srcs/parse.c
 
 INCLUDES = includes/
 

@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/18 13:33:51 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 16:19:53 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_start_bsq(char *file)
 {
 	int		fd;
 	t_map	*map;
-	char	**grid;
+	int		**matrix;
 
 	fd = ft_get_fd(file);
 	if (fd == -1)
@@ -28,15 +28,13 @@ void	ft_start_bsq(char *file)
 		ft_putstr("map error\n", 2);
 		return ;
 	}
-	grid = ft_parse(fd, map);
-	if (!grid)
+	matrix = ft_parse(fd, map);
+	if (!matrix)
 	{
 		ft_putstr("map error\n", 2);
 		return ;
 	}
-	ft_find_bsq(grid, map);
-	ft_destroy(grid, map->height);
-	free(map);
+//	ft_destroy(matrix);
 	close(fd);
 }
 
