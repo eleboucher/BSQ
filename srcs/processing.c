@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:51:10 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 16:27:38 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 17:18:59 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,32 @@ int		ft_min(int a, int b, int c)
 	return (min);
 }
 
-void	ft_print(char **grid, t_map *info, t_point max, int size)
+t_point	ft_find_bsq(int **matrix, int height, int lenght)
 {
 	t_point	cur;
+	t_point	max;
 
-	cur.y = -1;
-	while (++cur.y < info->height)
+	max.y = 0;
+	max.x = 0;
+	cur.y = 0;
+	while (++cur.y < height)
 	{
-		cur.x = -1;
-		while (++cur.x < info->width)
+		cur.x = 0;
+		while (++cur.x < lenght)
 		{
-			if (cur.y <= max.y && cur.y > max.y - size
-					&& cur.x <= max.x && cur.x > max.x - size)
-				write(1, &info->plein, 1);
-			else
-			{
-				if (cur.y > max.y || cur.y < max.y - size)
-				{
-					write(1, grid[cur.y], info->width);
-					cur.x = info->width;
-				}
-				else
-					write(1, &grid[cur.y][cur.x], 1);
-			}
+			matrix[cur.y][cur.x] = ft_calculate(matrix, cur);
+			if (matrix[cur.y][cur.x] > matrix[max.y][max.x])
+				max = cur;
 		}
-		write(1, "\n", 1);
 	}
+	return (max);
+}
+
+int		ft_calculate(int **matrix, t_point point)
+{
+	if (matrix[point.y][point.x] == 0)
+		return (0);
+	return (1 + ft_min(matrix[point.y - 1][point.x - 1],
+				matrix[point.y - 1][point.x],
+				matrix[point.y][point.x - 1]));
 }

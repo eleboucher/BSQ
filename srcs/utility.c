@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:55:26 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 14:56:43 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 17:13:43 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ t_map	*get_first_line(int fd)
 	first_line->vide = ft_read_int(fd, &first_line->height);
 	if (first_line->vide == '\n')
 		return (first_line);
-	if((read(fd, &first_line->obstacle, 1)) == 0 ||
+	if ((read(fd, &first_line->obstacle, 1)) == 0 ||
 			first_line->obstacle == '\n')
 		return (first_line);
-	if((read(fd, &first_line->plein, 1)) == 0 || first_line->plein == '\n')
+	if ((read(fd, &first_line->plein, 1)) == 0 || first_line->plein == '\n')
 		return (first_line);
 	read(fd, &junk, 1);
 	if (junk == '\n')

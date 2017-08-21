@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 16:19:53 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 17:24:53 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 void	ft_start_bsq(char *file)
 {
 	int		fd;
-	t_map	*map;
 	int		**matrix;
+	t_map	*map;
+	t_point	max;
 
 	fd = ft_get_fd(file);
 	if (fd == -1)
@@ -34,7 +35,9 @@ void	ft_start_bsq(char *file)
 		ft_putstr("map error\n", 2);
 		return ;
 	}
-//	ft_destroy(matrix);
+	max = ft_find_bsq(matrix, map->height, map->width);
+	ft_print(matrix, max, map);
+	ft_destroy(matrix, map->height);
 	close(fd);
 }
 

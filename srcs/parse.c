@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 14:13:14 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 16:28:28 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 17:17:18 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ int		**ft_parse(int fd, t_map *info)
 	int		cur_line;
 	int		**matrice;
 	char	*str;
-	int		ret;
 
-	if (!(matrice = malloc(info->height * sizeof(int))))
+	if (!(matrice = malloc(info->height * sizeof(int *))))
 		return (NULL);
 	if (!(matrice[0] = ft_get_line_one(fd, info)))
 	{
@@ -74,17 +73,13 @@ int		**ft_parse(int fd, t_map *info)
 	if (!(str = malloc((info->width + 1) * sizeof(int))))
 		return (NULL);
 	while (++cur_line < info->height)
-	{
-		if ((ret = read(fd, str, info->width + 1)) != info->width + 1
+		if (read(fd, str, info->width + 1) != info->width + 1
 				|| !(matrice[cur_line] = ft_fill_matrix(str, info))
 				|| str[info->width] != '\n')
 		{
 			ft_destroy(matrice, cur_line);
 			return (NULL);
 		}
-		printf("%d\n", ret);
-		write(1, str, info->width + 1);
-	}
 	free(str);
 	return (matrice);
 }
