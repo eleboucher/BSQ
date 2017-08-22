@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 14:13:14 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 13:09:10 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:48:06 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int		*ft_fill_matrix(char *str, t_map *info)
 			arr[cur] = 1;
 		else if (*str == info->obstacle)
 			arr[cur] = 0;
+		else if (*str == info->plein)
+			arr[cur] = -1;
 		else
 		{
 			free(arr);

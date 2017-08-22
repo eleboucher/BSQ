@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 13:08:22 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:45:35 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_start_bsq(int fd)
 	if (fd == -1)
 		return ;
 	map = get_first_line(fd);
-	if (map->valid_map == 0)
+	if (!map || map->valid_map == 0)
 	{
 		ft_putstr("map error\n", 2);
 		return ;
@@ -37,7 +37,6 @@ void	ft_start_bsq(int fd)
 	ft_print(matrix, max, map);
 	ft_destroy(matrix, map->height);
 	free(map);
-	close(fd);
 }
 
 int		main(int argc, char **argv)
@@ -54,7 +53,11 @@ int		main(int argc, char **argv)
 			ft_putstr("\n", 1);
 		fd = open(argv[cur_file], O_RDONLY);
 		if (fd == -1)
+		{
+			ft_putstr("map error\n", 2);
 			continue ;
+		}
 		ft_start_bsq(fd);
+		close(fd);
 	}
 }

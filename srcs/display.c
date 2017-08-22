@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 16:53:34 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 13:08:30 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:47:57 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_print(int **matrix, t_point max, t_map *info)
 			else if (matrix[line][i] == 0)
 				buffer[i] = info->obstacle;
 			else
-				buffer[i] = info->vide;
+				buffer[i] = (matrix[line][i] == -1) ? info->plein : info->vide;
 		}
 		buffer[i] = '\n';
 		write(1, buffer, info->width + 1);

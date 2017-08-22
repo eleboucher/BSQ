@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:51:10 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 13:11:03 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:48:37 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ t_point	ft_find_bsq(int **matrix, int height, int lenght)
 
 int		ft_calculate(int **matrix, t_point point)
 {
-	if (matrix[point.y][point.x] == 0)
-		return (0);
+	if (matrix[point.y][point.x] < 1)
+		return (matrix[point.y][point.x]);
 	return (1 + ft_min(matrix[point.y - 1][point.x - 1],
 				matrix[point.y - 1][point.x],
 				matrix[point.y][point.x - 1]));

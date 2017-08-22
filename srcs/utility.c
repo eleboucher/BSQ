@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:55:26 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 12:11:55 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:43:04 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_map	*get_first_line(int fd)
 	t_map	*first_line;
 	char	junk;
 
-	first_line = malloc(sizeof(t_map));
+	if (!(first_line = malloc(sizeof(t_map))))
+		return (NULL);
 	first_line->valid_map = 0;
 	first_line->vide = ft_read_int(fd, &first_line->height);
 	if (first_line->vide == '\n')
