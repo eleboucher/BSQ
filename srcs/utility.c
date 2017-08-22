@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:55:26 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 17:13:43 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 18:12:58 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_map	*get_first_line(int fd)
 	if ((read(fd, &first_line->plein, 1)) == 0 || first_line->plein == '\n')
 		return (first_line);
 	read(fd, &junk, 1);
-	if (junk == '\n')
+	if (junk == '\n' && first_line->height != 0)
 		first_line->valid_map = 1;
 	return (first_line);
 }
@@ -40,5 +40,7 @@ int		ft_get_fd(char *file)
 	int	fd;
 
 	fd = open(file, O_RDONLY);
+	if (fd == -1)
+		ft_putstr("map error\n", 1);
 	return (fd);
 }

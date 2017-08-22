@@ -6,21 +6,19 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 17:24:53 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 11:34:26 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "header.h"
 
-void	ft_start_bsq(char *file)
+void	ft_start_bsq(int fd)
 {
-	int		fd;
 	int		**matrix;
 	t_map	*map;
 	t_point	max;
 
-	fd = ft_get_fd(file);
 	if (fd == -1)
 		return ;
 	map = get_first_line(fd);
@@ -44,12 +42,18 @@ void	ft_start_bsq(char *file)
 int		main(int argc, char **argv)
 {
 	int		cur_file;
+	int		fd;
 
 	cur_file = 0;
+	if (argc == 1)
+		ft_start_bsq(0);
 	while (++cur_file < argc)
 	{
 		if (cur_file != 1)
 			ft_putstr("\n", 1);
-		ft_start_bsq(argv[cur_file]);
+		fd = open(argv[cur_file], O_RDONLY);
+		if (fd == -1)
+			continue ;
+		ft_start_bsq(fd);
 	}
 }

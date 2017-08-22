@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 14:13:14 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 17:17:18 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/21 18:12:45 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		**ft_parse(int fd, t_map *info)
 
 	if (!(matrice = malloc(info->height * sizeof(int *))))
 		return (NULL);
-	if (!(matrice[0] = ft_get_line_one(fd, info)))
+	if (!(matrice[0] = ft_get_line_one(fd, info)) || info->width == 0)
 	{
 		free(matrice);
 		return (NULL);

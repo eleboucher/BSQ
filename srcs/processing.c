@@ -6,13 +6,12 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:51:10 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 17:18:59 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 11:36:25 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 #include <stdio.h>
-#define MOD(x) ((x) % 2)
 
 int		ft_min(int a, int b, int c)
 {
