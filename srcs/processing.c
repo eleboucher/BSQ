@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:51:10 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 11:36:25 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:11:03 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ int		ft_min(int a, int b, int c)
 {
 	int	min;
 
-	min = a;
-	if (b < min)
-		min = b;
-	if (c < min)
-		min = c;
-	return (min);
+	min = (a < b) ? a : b;
+	return ((min < c) ? min : c);
 }
 
 t_point	ft_find_bsq(int **matrix, int height, int lenght)

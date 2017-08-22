@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 14:13:14 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/21 18:12:45 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/22 13:09:10 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,10 +112,10 @@ void	ft_destroy(int **matrice, int lines)
 {
 	int	cur_line;
 
-	cur_line = 0;
-	while (cur_line < lines)
+	cur_line = -1;
+	while (++cur_line < lines)
 	{
-		free(matrice[cur_line++]);
+		free(matrice[cur_line]);
 	}
 	free(matrice);
 }
