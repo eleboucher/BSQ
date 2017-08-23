@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/23 22:46:04 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/23 22:48:37 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_start_bsq(int fd)
 		return ;
 	}
 	matrix = ft_parse(fd, map);
-	if (!matrix || (read(fd, &c, 1) > 0 && c != '\n'))
+	if (!matrix || (read(fd, &c, 1) > 0 && fd != 0))
 	{
 		ft_putstr("map error\n", 2);
 		return ;
