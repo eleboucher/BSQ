@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/23 11:35:52 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/23 14:16:25 by elebouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	ft_start_bsq(int fd)
 	max = ft_find_bsq(matrix, map->height, map->width);
 	ft_print(matrix, max, map);
 	ft_destroy(matrix, map->height);
-	free(map);
 }
 
 int		main(int argc, char **argv)
