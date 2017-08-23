@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/21 14:13:14 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/23 16:58:51 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/23 22:40:59 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		*ft_get_line_one(int fd, t_map *info)
 			return (NULL);
 		}
 	}
-	return (arr);
+	return (c == '\n' ? arr : NULL);
 }
 
 int		*ft_realloc(int *to_free, int *buffer)
