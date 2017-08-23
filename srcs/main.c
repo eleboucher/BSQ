@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/23 18:39:44 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/23 20:52:43 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int		main(int argc, char **argv)
 		if (fd == -1)
 		{
 			ft_putstr("map error\n", 2);
+			if (argc > 2)
+				ft_putstr("\n", 1);
 			continue ;
 		}
 		ft_start_bsq(fd);
