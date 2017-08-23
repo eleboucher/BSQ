@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/23 14:16:25 by elebouch         ###   ########.fr       */
+/*   Updated: 2017/08/23 17:01:50 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_start_bsq(int fd)
 
 	if (fd == -1)
 		return ;
-	map = get_first_line(fd);
+	map = get_map_info(fd);
 	if (!map || map->valid_map == 0)
 	{
 		ft_putstr("map error\n", 2);
