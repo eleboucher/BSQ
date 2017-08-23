@@ -6,7 +6,7 @@
 #    By: elebouch <elebouch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/18 10:00:59 by elebouch          #+#    #+#              #
-#    Updated: 2017/08/22 12:17:12 by elebouch         ###   ########.fr        #
+#    Updated: 2017/08/23 17:08:17 by elebouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,23 +14,27 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror -O3
 EXEC = bsq
 
-SRCS = srcs/main.c 		 \
-	   srcs/utility.c	 \
-	   srcs/libft.c		 \
-	   srcs/processing.c \
-	   srcs/parse.c      \
-	   srcs/display.c
+SRCS = main.c		\
+	   utility.c	\
+	   libft.c		\
+	   processing.c \
+	   parse.c      \
+	   display.c
 
-INCLUDES = includes/
+SRC = $(addprefix srcs/, $(SRCS))
+OBJ = $(SRC:.c=.o)
 
-all: $(EXEC)
+all:  $(EXEC)
 
-$(EXEC):
-	$(CC) $(FLAGS) $(SRCS) -I $(INCLUDES) -o $(EXEC)
+$(EXEC): $(OBJ)
+	@$(CC) $(FLAGS) $(OBJ) -o $(EXEC)
 
 clean:
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(EXEC)
+	@rm -f $(EXEC)
 
-re: fclean all
+re: fclean  all
+
+.PHONY: all clean fclean re
