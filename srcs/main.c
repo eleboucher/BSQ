@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:51:08 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/22 13:45:35 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/23 11:35:52 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		main(int argc, char **argv)
 	{
 		if (cur_file != 1)
 			ft_putstr("\n", 1);
-		fd = open(argv[cur_file], O_RDONLY);
+		fd = open(argv[cur_file], O_RDONLY, S_IREAD);
 		if (fd == -1)
 		{
 			ft_putstr("map error\n", 2);
