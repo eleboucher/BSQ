@@ -6,7 +6,7 @@
 /*   By: nweeks <nweeks@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 09:55:26 by nweeks            #+#    #+#             */
-/*   Updated: 2017/08/23 20:47:31 by nweeks           ###   ########.fr       */
+/*   Updated: 2017/08/23 21:15:03 by nweeks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		ft_get_fd(char *file)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		ft_putstr("map error\n", 1);
+		ft_putstr("map error\n", 2);
 	return (fd);
 }
 
